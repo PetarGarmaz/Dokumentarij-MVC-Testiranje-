@@ -51,7 +51,7 @@ class DokumentarijController:
 		for name in self.model.names:
 			self.view.show_names(name)
 
-	def get_new_name(self):
+	def add_new_name(self):
 		# Asks the user for a new name, and stores the name if we don't already
 		#  know about this person.
 		new_name = self.view.insert_new_name()
@@ -74,11 +74,14 @@ class DokumentarijController:
 			if choice == '1':
 				self.get_names()
 			elif choice == '2':
-				self.get_new_name()
+				self.add_new_name()
 			elif choice == 'x':
 				print("\nHvala na pregledu/uređivanju dokumentarija. Pozdrav.")
 			else:
 				print("\nGreška - napravite hvatanje izuzetaka sami za vježbu.\n")
+
+	def test(self):
+		return 0
 				
 if __name__ == "__main__":
 	game = DokumentarijController(DokumentarijModel(), DokumentarijView())
